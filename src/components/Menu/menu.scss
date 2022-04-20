@@ -1,0 +1,32 @@
+@import "../../scss/variable";
+@import "../../scss/mixin";
+@import "../../scss/index";
+
+.menu {
+	color: $second-color;
+	margin: 0 auto;
+	min-height: 700px;
+	width: 80%;
+	padding: 120px 40px;
+	&__title {
+		text-align: center;
+		margin-bottom: 50px;
+	}
+	&__list {
+		list-style-type: none;
+		margin: 20px;
+		@include flex(center, space-around);
+		flex-wrap: wrap;
+		text-align: center;
+		h5 {
+			margin: 10px 0 30px 0;
+		}
+		.item {
+			cursor: pointer;
+			transition: transform .15s;
+		}
+		.item:hover {
+			transform: scale(1.07);
+		}
+	}
+}

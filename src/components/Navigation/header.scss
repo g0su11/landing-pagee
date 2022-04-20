@@ -1,0 +1,131 @@
+@import "../../scss/variable";
+@import "../../scss/mixin";
+@import "../../scss/index";
+
+.header {
+	color: $main-color;
+	background-color: #333;
+	height: $header-height;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 100;
+
+	&__inner {
+		@include flex(center, space-around);
+	}
+	&__logo {
+		display: flex;
+		justify-content: start;
+		align-items: center;
+		img {
+		    width: 100px;
+		}
+	}
+	&__nav {
+		@include flex(center, space-between);
+		li {
+		  list-style: none;
+		  cursor: pointer;
+		}
+		li ~ li {
+		  margin-left: 1rem;
+		}
+
+		a {
+			color:$main-color;
+			text-decoration: none;
+			display: inline-block;
+			padding: 0.5rem 1rem;
+			position: relative;
+			pointer-events: visible;
+
+			&::before,
+			&::after {
+				content: "";
+				position: absolute;
+				height: 1px;
+				width: 0;
+				background-color: $main-color;
+				transition: width 0.3s ease;
+			}
+
+			&:hover::before,
+			&:hover::after {
+				width: 50%;
+			}
+
+			&::before {
+				left: 0;
+				top: 0;
+			}
+
+			&::after {
+				right: 0;
+				bottom: 0;
+			}
+		}
+	}
+	.icon {
+		display: none;
+	}
+}
+
+@media screen and (max-width: $mobile-width) {
+	.header__nav {
+		display: none;	
+	}
+	.header {
+		&__inner {
+			@include flex(center, space-between);
+			margin: 0 40px;
+		}
+		.icon {
+			cursor: pointer;
+			display: block;	
+			font-size: 2rem;
+		}
+	}
+}
+
+@media screen and (max-width: $mobile-width) {
+	.header__inner {
+		position: relative;
+		.header__nav.responsive {
+			width: 80%;
+			position: absolute;
+			display: block;
+			top: $header-height;
+			right: -40px;
+			background-color: rgba(255,235,193, 0.95);
+			li {
+				margin: 1rem 1rem;
+			}
+			a {
+				width: 130px;
+				left: 30%;
+				text-align: center;
+				color:black;
+				text-decoration: none;
+				display: inline-block;
+				padding: 0.5rem 1rem;
+				pointer-events: visible;
+				&::before,
+				&::after {
+					content: "";
+					position: absolute;
+					height: 1px;
+					width: 0;
+					background-color: #333;
+					transition: width 0.4s ease;
+				}
+
+				&:hover::before,
+				&:hover::after {
+					width: 100%;
+				}
+			}
+		}
+	}
+}

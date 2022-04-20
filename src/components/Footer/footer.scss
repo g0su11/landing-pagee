@@ -1,0 +1,51 @@
+@import "../../scss/variable";
+@import "../../scss/mixin";
+@import "../../scss/index";
+
+.footer {
+    color: $white;
+    min-height: 120px;
+    background-color: $second-color;
+    @include flex(center, space-around);
+    flex-wrap: wrap-reverse;
+    &__title {
+        margin: 15px;
+        .info {
+           font-size: 16px; 
+        }
+    }
+    &__icons {
+        @include flex(center, space-around);
+        flex-wrap: wrap;
+        list-style-type: none;
+        .icon-item {
+            position: relative;
+            font-size: 30px;
+            margin: 15px 15px;
+            text-align: center;
+            .icon-link {
+                display: inline-flex;
+                font-size: 2rem;  
+                text-decoration: none;  
+                color: $white;
+                width: 3rem;
+                height: 3rem;   
+                transition: .2s linear;
+            }
+            .icon-link:hover {
+                display: inline-flex;
+                text-decoration: none;
+                color: $second-color;
+                background-color:$white;
+                height: 49px;
+                width: 50px;
+                border-radius: 50%;
+            }
+            .icon-link i {
+                margin: auto;
+            }
+        }
+        
+        
+    }
+}   

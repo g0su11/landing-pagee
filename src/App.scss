@@ -1,0 +1,27 @@
+@import "scss/variable";
+@import "scss/mixin";
+@import "scss/index";
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+html, body {
+  font-size: 100%;
+}
+
+
+#root,
+.App {
+  margin: 0px auto;
+  font-family: $font-family;
+  font-size: 1.5rem;
+  font-weight: 200;
+  overflow: hidden;
+  height: 100%;
+}
